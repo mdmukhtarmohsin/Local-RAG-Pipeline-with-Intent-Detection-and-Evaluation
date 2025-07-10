@@ -1,0 +1,66 @@
+# Local RAG Pipeline Configuration
+
+# LLM Configuration
+llm:
+  default_model: "local" # local, gemini, auto
+  local:
+    provider: "ollama"
+    model: "gemma3:4b-it-qat"
+    base_url: "http://localhost:11434"
+    timeout: 30
+  gemini:
+    model: "gemini-2.0-flash-exp"
+    api_key_env: "GEMINI_API_KEY"
+    temperature: 0.7
+    max_tokens: 2048
+
+# Intent Classification
+intent:
+  model_type: "transformer" # transformer, llm, zero_shot
+  model_name: "sentence-transformers/all-MiniLM-L6-v2"
+  confidence_threshold: 0.7
+  classes:
+    - "technical_support"
+    - "billing_account"
+    - "feature_request"
+
+# RAG Configuration
+rag:
+  vector_db: "chroma" # chroma, faiss
+  embedding_model: "sentence-transformers/all-MiniLM-L6-v2"
+  chunk_size: 512
+  chunk_overlap: 50
+  top_k: 5
+  similarity_threshold: 0.7
+
+# Database Paths
+data_paths:
+  technical_support: "data/tech_docs"
+  billing_account: "data/billing_docs"
+  feature_request: "data/roadmap"
+  vector_db_path: "embeddings/vector_dbs"
+
+# Evaluation
+evaluation:
+  test_dataset: "eval/test_queries.json"
+  metrics:
+    - "intent_accuracy"
+    - "relevance_score"
+    - "context_utilization"
+    - "latency"
+    - "token_cost"
+
+# Server Configuration
+server:
+  host: "0.0.0.0"
+  port: 8000
+  max_concurrent_requests: 10
+  enable_streaming: true
+
+# UI Configuration
+ui:
+  title: "Customer Support RAG Assistant"
+  theme: "soft"
+  enable_intent_display: true
+  enable_context_display: true
+  enable_metrics_display: true

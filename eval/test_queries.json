@@ -1,0 +1,56 @@
+[
+  {
+    "intent": "technical_support",
+    "query": "Why is my API key giving a 403 Forbidden error?",
+    "expected_context": "authentication documentation, API key section",
+    "expected_keywords": ["403", "authentication", "API key", "forbidden"]
+  },
+  {
+    "intent": "technical_support",
+    "query": "How do I implement pagination for the /users endpoint?",
+    "expected_context": "API documentation on pagination, cursors, limit/offset",
+    "expected_keywords": [
+      "pagination",
+      "endpoint",
+      "limit",
+      "offset",
+      "next page"
+    ]
+  },
+  {
+    "intent": "billing_account",
+    "query": "What are the differences between the Pro and Enterprise plans?",
+    "expected_context": "pricing page, plan comparison table",
+    "expected_keywords": [
+      "pricing",
+      "Pro plan",
+      "Enterprise plan",
+      "features",
+      "cost"
+    ]
+  },
+  {
+    "intent": "billing_account",
+    "query": "How can I update my credit card information?",
+    "expected_context": "account settings, billing section, payment methods",
+    "expected_keywords": [
+      "credit card",
+      "update",
+      "payment",
+      "billing",
+      "account"
+    ]
+  },
+  {
+    "intent": "feature_request",
+    "query": "Do you have plans to support integration with Slack?",
+    "expected_context": "product roadmap, integration plans",
+    "expected_keywords": ["Slack", "integration", "roadmap", "feature"]
+  },
+  {
+    "intent": "feature_request",
+    "query": "It would be great if you could add a dark mode to the dashboard.",
+    "expected_context": "feature request list, UI improvement suggestions",
+    "expected_keywords": ["dark mode", "UI", "theme", "dashboard", "feature"]
+  }
+]
