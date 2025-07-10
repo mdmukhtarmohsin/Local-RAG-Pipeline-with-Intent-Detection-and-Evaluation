@@ -123,5 +123,6 @@ if __name__ == "__main__":
         "app.main:app", 
         host=server_config.get('host', "0.0.0.0"), 
         port=server_config.get('port', 8000), 
-        reload=True
+        reload=True,
+        reload_excludes=["logs/*"]
     ) 
